@@ -139,7 +139,7 @@ namespace V_Bank_API.Controllers
 
             TipoTarjeta tipoTarjeta = db.TipoTarjeta.Find(tarjetaDesc.tipo_tarjeta);
 
-            if (!(detector.BrandName == c.desencriptar(tipoTarjeta.descripcion)))
+            if (!(detector.BrandName.ToUpper() == c.desencriptar(tipoTarjeta.descripcion).ToUpper()))
             {
                 return BadRequest("-1; Número de tarjeta inválido.");
             };
