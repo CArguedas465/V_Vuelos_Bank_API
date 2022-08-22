@@ -38,7 +38,7 @@ namespace V_Bank_API.Controllers
 
             if (compra.Mes_Exp != Convert.ToInt16(c.desencriptar(tarjeta.mes_expiracion)) || compra.Anio_Exp != Convert.ToInt16(c.desencriptar(tarjeta.anio_expiracion)) || compra.CVV != Convert.ToInt16(c.desencriptar(tarjeta.cvv)))
             {
-                return BadRequest("Datos de entrada inválidos.");
+                return BadRequest("Datos de entrada inválidos (Expiración o CVV incorrecto(s)).");
             }
 
             /*Revisa Tipo*/
